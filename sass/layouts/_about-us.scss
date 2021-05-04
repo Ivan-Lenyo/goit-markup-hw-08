@@ -1,0 +1,48 @@
+.about-us__list {
+  --grid-item: 1;
+
+  @media screen and (min-width: 768px) {
+    --grid-item: 2;
+  }
+
+  @media screen and (min-width: 1200px) {
+    --grid-item: 4;
+  }
+}
+
+.about-us__title {
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: var(--title-text-color);
+
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.about-us__text {
+  margin-top: 0;
+  margin-bottom: 0;
+
+  font-size: 14px;
+  line-height: 1.71;
+}
+
+.about-us__thumb::before {
+  display: block;
+  content: '';
+  height: 120px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: var(--bg-color);
+  border-radius: 4px;
+  margin-bottom: 30px;
+}
+
+@each $item in antenna, clock, diagram, astronaut {
+  .icon__#{$item}::before {
+    background-image: url('../images/about-us/#{$item}.svg');
+  }
+}
